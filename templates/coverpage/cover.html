@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: grey;
+            margin: 30px;
+            padding: 0px;
+        }
+        .cover {
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        .cover h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cover h3 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #1abc9c;
+            margin-bottom: 12px;
+        }
+        .cover h4 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #e74c3c;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .cover h4 strong {
+            font-weight: bold;
+            color: #8e44ad;
+            background-color: #f39c12;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .cover h2 strong,
+        .cover h3 strong,
+        .cover h4 strong {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .cover h2:hover {
+            color: #3498db;
+            cursor: pointer;
+        }
+        .cover h3:hover {
+            color: #e67e22;
+            cursor: pointer;
+        }
+        .cover h2,
+        .cover h3,
+        .cover h4 {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cover Page</h1>
+    <div>{{ message }}</div>
+    {% for student in students %}
+    <div class="cover">
+        <img src="https://iumss.baiust.ac.bd/login_pages/admin_page/images/logo.png" alt="">
+        <h2><strong>Bangladesh Army International University of Science and Technology</strong>
+            {{Student.university_name}}</h2>
+        <h3><strong>Name :Sunjana Alam Purba</strong> {{Student.name}}</h3>
+        <h4><strong>student ID : 0822210205101031</strong> {{Student.student_id}}</h4>
+        <h4><strong>Department : CSE</strong> {{Student.department}}</h4>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
